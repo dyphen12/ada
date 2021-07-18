@@ -13,7 +13,7 @@ CORS(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return {'ADA1 core v1.1b': 'Thank You'}
+        return {'ADA1 core v1.2b': 'Now in the present!'}
 
 class predictsymbol(Resource):
     def get(self, symbol):

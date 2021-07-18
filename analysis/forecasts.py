@@ -16,7 +16,13 @@ def forecast(symbol):
 
     newraw = currentdata.history(period="max")
 
-    x_banal = np.array([newraw['Open'][-1],newraw['High'][-1],newraw['Close'][-1]])
+    datanocrack = newraw
+
+    Data = datanocrack.pop('Close')
+
+    Data = Data.round(2)
+
+    x_banal = np.array([Data[-3],Data[-2],Data[-1]])
     x_banalv = np.array(x_banal.tolist()).reshape(-1, 1)
     x_banalv = sc.fit_transform(x_banalv)
 
@@ -27,26 +33,35 @@ def forecast(symbol):
 
 
     forecast = sc.inverse_transform(inverse_forecast)
+
+    print('Current Price: ', Data[-1])
+    print('Forecast (1 Period):', forecast[0][0])
 
     return forecast[0][0]
 
 def hardforecast(symbol):
+
     currentdata = yf.Ticker(symbol)
 
     newraw = currentdata.history(period="max")
 
-    x_banal = np.array([newraw['Open'][-1],newraw['High'][-1],newraw['Close'][-1]])
+    datanocrack = newraw
+
+    Data = datanocrack.pop('Close')
+
+    Data = Data.round(2)
+
+    x_banal = np.array([Data[-3],Data[-2],Data[-1]])
     x_banalv = np.array(x_banal.tolist()).reshape(-1, 1)
-    x_banalv = sc.fit_transform(x_banalv)
 
     xfuck = x_banalv.reshape((1, 3, n_features))
+
 
     inverse_forecast = model.predict(xfuck, verbose=0)
 
     forecast = sc.inverse_transform(inverse_forecast)
 
-    return forecast[0][0], newraw['Open'][-1]
-
+    return forecast[0][0], Data[-1]
 
 def tripleforecast(symbol):
 
@@ -54,7 +69,13 @@ def tripleforecast(symbol):
 
     newraw = currentdata.history(period="max")
 
-    x_banal = np.array([newraw['Open'][-1],newraw['High'][-1],newraw['Close'][-1]])
+    datanocrack = newraw
+
+    Data = datanocrack.pop('Close')
+
+    Data = Data.round(2)
+
+    x_banal = np.array([Data[-3],Data[-2],Data[-1]])
     x_banalv = np.array(x_banal.tolist()).reshape(-1, 1)
     x_banalv = sc.fit_transform(x_banalv)
 
@@ -66,13 +87,15 @@ def tripleforecast(symbol):
 
     forecast = sc.inverse_transform(inverse_forecast)
 
-    return forecast[0][0], newraw['Open'][-1],newraw['High'][-2],newraw['Close'][-3]
+    deforecast = [Data[-3],Data[-2],Data[-1], forecast[0][0]]
 
-#Extended Forecast
+    return deforecast
 
-def arrayofdata(Open,High,Close):
 
-    outarray = np.array([Open,High,Close],dtype=object)
+# Extended Forecast
+
+def arrayofdata(arg3, arg2, arg1):
+    outarray = np.array([arg3, arg2, arg1], dtype=object)
     outarrayv2 = np.array(outarray.tolist()).reshape(-1, 1)
     outarrayv2 = sc.fit_transform(outarrayv2)
 
@@ -83,13 +106,19 @@ def extendedforecast(symbol):
 
     extension = []
 
-    flen = 7 # IT SHOULD BE 4 BECAUSE THE PRONOSTIC PARADOX, MORE THAN 7 DAYS MAY BE INCONSISTENT.
+    flen = 5  # IT SHOULD BE 5 BECAUSE THE PRONOSTIC PARADOX, MORE THAN 7 DAYS MAY BE INCONSISTENT.
 
-    O, H, L, C = tripleforecast(symbol)
+    defarray = tripleforecast(symbol)
 
-    for step in range(0,flen):
+    O1 = defarray[-1]
+    O2 = defarray[-2]
+    O3 = defarray[-3]
 
-        currentarray = arrayofdata(O,H,L)
+    extension.append(O2)
+    extension.append(O1)
+
+    for step in range(0, flen):
+        currentarray = arrayofdata(O3, O2, O1)
 
         xfuck = currentarray.reshape((1, 3, n_features))
 
@@ -99,8 +128,8 @@ def extendedforecast(symbol):
 
         extension.append(forecastx[0][0])
 
-        L = H
-        H = O
-        O = forecastx
+        O3 = O2
+        O2 = O1
+        O1 = forecastx[0][0]
 
     return extension

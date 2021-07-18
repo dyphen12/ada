@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<title>ADA1 AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="icon" type="image/png" href="./img/favicon.png">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script src="js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("./img/background.jpg")}
+.bgimg2 {background-image: url("./img/background.jpg")}
+.logo {max-width: 12%;
+        margin-bottom: 2%;}
+</style>
+<body>
+
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+
+    <h1 class="w3-jumbo"><img src="./img/logo.png" alt="" class="logo"> ADA1</h1>
+    <h4>AI Stock Market Forecasting System</h4>
+    <input type="text" id="nforecast" name="nforecast" value="Ex.: AMZN">
+    <button type="button" onclick="doforecast()" name="button">Compute</button>
+    <p>Plot a Forecast</p>
+
+    <p><b>Prisma Inc 2021</b></p>
+  </div>
+</header>
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="#home" style="width:25%" class="w3-bar-item w3-button">Compute Forecast</a>
+    <a href="#us" style="width:25%" class="w3-bar-item w3-button">See Plot</a>
+    <a href="#analysis" style="width:25%" class="w3-bar-item w3-button">Check Analysis</a>
+    <a href="home.html#pricing" style="width:25%" class="w3-bar-item w3-button w3-hover-black">Sign Up / Login</a>
+  </div>
+</div>
+
+<!-- About / Jane And John -->
+<div class="w3-container w3-padding-64 w3-white w3-grayscale-min" id="us">
+  <div class="w3-content">
+    <h1 id="SymbolTitle" class="w3-center w3-text-grey"><b>ADA Forecast</b></h1>
+    <canvas id="myChart" width="200" height="100"></canvas>
+
+    <p class="w3-center" id="results"><i>Compute your forecast first to load calculations <br> (Refresh the page after every forecast)</i>
+    </p><br>
+    <p class="w3-center"><a href="#wedding" class="w3-button w3-black w3-round w3-padding-large w3-large">More Details</a></p>
+  </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container  bgimg2">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h2 class="w3-xxlarge">ADA1 Features:</h2>
+    <p>Loss: 1.9837e-04 / Average Error: 0.0089</p>
+    <p>Trend Calculations</p>
+    <p>Buy and Sell Signals</p>
+    <p>Forecast Chart</p>
+    <p>Share Revenue</p>
+  </div>
+</div>
+
+<!-- Wedding information -->
+<div class="w3-container w3-padding-64 w3-white w3-grayscale-min w3-center" id="analysis">
+  <div class="w3-content">
+    <h1 class="w3-text-grey"><b>IN DEPTH ANALYSIS</b></h1>
+    <h2>Differentiation</h2>
+    <canvas id="diffChart" width="200" height="100"></canvas>
+    <div class="w3-row">
+      <div class="w3-half">
+        <h3>From</h3>
+        <div id="dfromzz">
+        </div>
+
+      </div>
+      <div class="w3-half">
+        <h3>to</h3>
+        <div id="dto">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- RSVP section -->
+<div class="w3-container w3-padding-64 w3-pale-green w3-center w3-wide" id="rsvp">
+  <h1>POTENT HUH?</h1>
+  <p class="w3-large">This is just a DEMO, if you want more, you can request a subscription to the entire ADA1 Terminal.</p>
+  <p class="w3-xlarge">
+    <button onClick="location.href='home.html#pricing'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">Request Access</button>
+  </p>
+</div>
+
+<!-- Login modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+    <div class="w3-container w3-white w3-center">
+      <h1 class="w3-wide">Login</h1>
+      <p>We really hope this works for you.</p>
+      <form>
+        <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
+      </form>
+      <p>Also... Email us to prismasolutions1@gmail.com</p>
+      <p><i>The Prisma Team</i></p>
+      <div class="w3-row">
+        <div class="w3-half">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Send</button>
+        </div>
+        <div class="w3-half">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://ada-ai-forecast-sys.herokuapp.com/" title="ADAcore API Link" target="_blank" class="w3-hover-text-green">ADAcore v1.2b API</a></p>
+</footer>
+
+
+</body>
+</html>

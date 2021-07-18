@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<title>ADA1 Terminal Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="./img/favicon.png">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="./js/login.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-purple.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('./img/convert.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle">
+    <div class="loginblock">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Login | Welcome</h2>
+  </div>
+  >
+  <div class="mdl-card__supporting-text">
+    <div id="login-container">
+      <div class="mdl-textfield mdl-js-textfield">
+
+        <input class="mdl-textfield__input" type="text" id="user">
+        <label class="mdl-textfield__label" for="sample1">Username</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="password" id="pass">
+        <label class="mdl-textfield__label" for="sample1">Password</label>
+      </div>
+      <p id="demo"></p>
+    </div>
+
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a onclick="login()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Login
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+      <i class="material-icons">share</i>
+    </button>
+  </div>
+</div>
+    </div>
+
+  </div>
+
+  <div class="w3-display-topleft w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">sign up</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">ADA1 Terminal v1.0.2</p>
+    <p class="w3-large">Core v1.2b</p>
+    <p>powered by <a href="home.html" target="_blank">Prisma</a></p>
+  </div>
+</div>
+
+
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById(&#39;contact&#39;).style.display=&#39;none&#39;" class="w3-button w3-display-topright w3-large">x</span>
+      <h3>Sign Up</h3>
+    </div>
+    <div class="w3-container">
+
+      <h3>We're glad you are interested!</h3>
+      <p>Request an account, ask for a monthly subscription.</p>
+      <p>Send your request to the following e-mail address and we will answer ASAP:</p>
+      <h4>prismasolutions1@gmail.com</h4>
+      <p>Thanks for choosing ADA1.</p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

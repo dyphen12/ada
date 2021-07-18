@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gruyaz Design</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Roboto", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-white">
+
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-animate-right w3-top w3-text-white w3-large" style="background-color:#FF7C6F;z-index:3;width:250px;font-weight:;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+  <a href="./portfolio.html"  class="w3-bar-item w3-button w3-center w3-padding-16">Portfolio</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">About me</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Contact</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <img id="logotype" src="./img/web-symbol.svg" alt="Gruyaz-logo">
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+<script src="./js/scripts.js" charset="utf-8"></script>
+  <!-- Photo grid -->
+  <div class="w3-row ">
+
+<div class="description-gd">
+
+  <img src="./img/logotype-full.svg" alt="logo">
+  <br>
+
+  <img id="tagline" src="./img/tagline.svg" alt="illustration">
+  <br>
+  <br>
+  <br>
+  <img id="contact-button" src="./img/contact-button.svg" alt="button">
+
+
+</div>
+
+<img id="illustration" src="./img/illustration.svg" alt="illustration">
+
+
+  </div>
+
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container  w3-center  w3-padding-32" id="about">
+
+    <div class="portofolio-anim">
+
+      <img class="portfolio-image1" src="./img/portfolio/blue-shape-big.svg" alt="">
+      <img class="portfolio-image2" src="./img/portfolio/yellow-shape-medium.svg" alt="">
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Contact section -->
+  <div class="w3-container w3-padding-64 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:600px">
+      <h4 class="w3-center"><b>Contact Me</b></h4>
+      <p>Do you want a proposal? Fill out the form and fill me in with the details We love to review your work proposal</p>
+      <form method="post" action="mailto:gruyazdesign@gmail.com" >
+        <div class="w3-section">
+          <label>Name or Company</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" value="Send Email" id="cbutton" class="w3-button w3-block w3-margin-bottom">Contact Us</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32">
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>INFO</h3>
+        <p>Gruyaz Design</p>
+        <p>Roma, Italia</p>
+        <p>+57 3208896470</p>
+        <p>Direct Contact:</p>
+        <p>gruyazdesign@gmail.com</p>
+      </div>
+
+      <div class="w3-third">
+        <h3>Gruyaz Feed</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+
+            <span class="w3-large">Branding and Marketing</span><br>
+            <span>Our best.</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+
+            <span class="w3-large">Web Development</span><br>
+            <span>Our best too!</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>POPULAR TAGS</h3>
+        <p>
+          <span class="w3-tag w3-black w3-margin-bottom">Branding</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Colombia</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
+          <span class="w3-tag w3-black w3-small w3-margin-bottom">Graphic Design</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Upwork</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
+          <span class="w3-tag w3-black w3-small w3-margin-bottom">Illustrator</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Photoshop</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
+          <span class="w3-tag w3-black w3-small w3-margin-bottom">Web Design</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">After Effects</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
+          <span class="w3-tag w3-black w3-small w3-margin-bottom">Development</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Marketing</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+</body>
+</html>

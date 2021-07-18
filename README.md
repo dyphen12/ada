@@ -2,7 +2,7 @@
 
 ### **ADA v1.2b**
 
-##_Now in the present!_
+## _Now in the present!_
 
 ## ADA1 Private Repositories.
 

@@ -1,8 +1,7 @@
 import yfinance as yf
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import StandardScaler
 import numpy as np
-from core import adaload
+from ada.core import adaload
 
 n_features = 1
 
@@ -91,7 +90,6 @@ def tripleforecast(symbol):
 
     return deforecast
 
-
 # Extended Forecast
 
 def arrayofdata(arg3, arg2, arg1):
@@ -100,7 +98,6 @@ def arrayofdata(arg3, arg2, arg1):
     outarrayv2 = sc.fit_transform(outarrayv2)
 
     return outarrayv2
-
 
 def extendedforecast(symbol):
 

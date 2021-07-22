@@ -1,4 +1,4 @@
-from analysis import forecasts
+from ada.analysis import forecasts
 
 def cucatodict(cuca):
 

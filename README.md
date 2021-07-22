@@ -29,7 +29,7 @@ Insights:
 
 ### Install
 
-`pip install adaforecasts`
+`pip install -i https://test.pypi.org/simple/ adaforecasts==1.3.3`
 
 ### How to use:
 

@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+Flask-RESTful
+h5py
+numpy
+PyYAML
+requests
+sklearn
+tensorflow
+Werkzeug
+yfinance
+gunicorn

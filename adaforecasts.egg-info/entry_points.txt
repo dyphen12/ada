@@ -1,0 +1,3 @@
+[console_scripts]
+ada = analysis.forecasts:main
+

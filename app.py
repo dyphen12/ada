@@ -3,9 +3,7 @@ from flask_restful import Resource, Api
 from flask import jsonify
 from flask_cors import CORS
 
-from analysis import calculations as clc
-from analysis import forecasts as fore
-
+from ada.analysis import calculations as clc, forecasts as fore
 
 app = Flask(__name__)
 api = Api(app)

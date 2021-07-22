@@ -1,10 +1,10 @@
 # Welcome to the ADA Project!
 
-### **ADA v1.2b**
+### **ADA v1.3.3**
 
 ## _Now in the present!_
 
-## ADA1 Private Repositories.
+## ADA1 Public API.
 
 **Abstract:**
 We see patterns in the numbers, these patters are following a context, therefore a syntax but 
@@ -26,3 +26,24 @@ Insights:
 - Revenue calculator base on forecast.
 
 - Trend Signal (Buy/Sell)
+
+### Install
+
+`pip install adaforecasts`
+
+### How to use:
+
+`import ada.analysis.forecasts as ada`
+
+`x = ada.forecast('AAPL')`
+
+`print(x)`
+
+Output:
+
+`Current Price:  145.4
+Forecast (1 Period): 143.14865`
+
+
+
+

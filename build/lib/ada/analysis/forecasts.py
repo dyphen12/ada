@@ -90,7 +90,6 @@ def tripleforecast(symbol):
 
     return deforecast
 
-
 # Extended Forecast
 
 def arrayofdata(arg3, arg2, arg1):
@@ -99,7 +98,6 @@ def arrayofdata(arg3, arg2, arg1):
     outarrayv2 = sc.fit_transform(outarrayv2)
 
     return outarrayv2
-
 
 def extendedforecast(symbol):
 

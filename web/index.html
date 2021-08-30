@@ -3,6 +3,11 @@
 <title>ADA1 AI</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:url"                content="https://adaforecasts.site/" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="ADA1 Forecasts" />
+<meta property="og:description"        content="Stock Market Forecasting System. Save time, analyze everything." />
+<meta property="og:image"              content="https://github.com/dyphen12/ada/blob/main/web/img/imgasset1.png?raw=true" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="icon" type="image/png" href="./img/favicon.png">
@@ -12,18 +17,74 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&family=STIX+Two+Math&display=swap');
 body,h1,h2{font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 p {line-height: 2}
-.bgimg, .bgimg2 {
+.bgimg {
   min-height: 100%;
   background-position: center;
   background-size: cover;
 }
+
+.bgimg2 {min-height: 30%;
+  background-position: center;
+  background-size: cover;}
 .bgimg {background-image: url("./img/background.jpg")}
 .bgimg2 {background-image: url("./img/background.jpg")}
 .logo {max-width: 12%;
         margin-bottom: 2%;}
+#title-ada{
+font-family: 'STIX Two Math', serif;
+}
+#ada-subtitle{
+font-family: 'Quicksand', sans-serif;
+}
+#plot-title{
+font-family: 'Quicksand', sans-serif;
+}
+#prisma-mark{
+font-family: 'Quicksand', sans-serif;
+}
+#SymbolTitle{
+font-family: 'STIX Two Math', serif;
+}
+#results{
+font-family: 'STIX Two Math', serif;
+}
+#analysis-title{
+font-family: 'STIX Two Math', serif;
+}
+#diff-title{
+font-family: 'Quicksand', sans-serif;
+}
+#from-title{
+font-family: 'Quicksand', sans-serif;
+}
+#to-title{
+font-family: 'Quicksand', sans-serif;
+}
+
+#summary-title{
+font-family: 'STIX Two Math', serif;
+}
+
+#summary-subtitle{
+font-family: 'Quicksand', sans-serif;
+}
+#ada-api-link{
+font-family: 'STIX Two Math', serif;
+}
+
+#powered-title{
+font-family: 'Quicksand', sans-serif;
+}
+#contact-mail{
+font-family: 'Quicksand', sans-serif;
+}
+#prisma-mark-footer{
+font-family: 'Quicksand', sans-serif;
+}
 </style>
 <body>
 
@@ -31,25 +92,17 @@ p {line-height: 2}
 <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-text-white w3-center">
 
-    <h1 class="w3-jumbo"><img src="./img/logo.png" alt="" class="logo"> ADA1</h1>
-    <h4>AI Stock Market Forecasting System</h4>
+    <h1 id="title-ada" class="w3-jumbo"><img src="./img/logo.png" alt="" class="logo"> ADA1</h1>
+    <h4 id="ada-subtitle">AI Stock Market Forecasting System</h4>
     <input type="text" id="nforecast" name="nforecast" value="Ex.: AMZN">
     <button type="button" onclick="doforecast()" name="button">Compute</button>
-    <p>Plot a Forecast</p>
+    <p id="plot-title">Plot a Forecast</p>
 
-    <p><b>Prisma Inc 2021</b></p>
+    <p id="prisma-mark"><b>Prisma Systems 2021</b></p>
   </div>
 </header>
 
-<!-- Navbar (sticky bottom) -->
-<div class="w3-bottom w3-hide-small">
-  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
-    <a href="#home" style="width:25%" class="w3-bar-item w3-button">Compute Forecast</a>
-    <a href="#us" style="width:25%" class="w3-bar-item w3-button">See Plot</a>
-    <a href="#analysis" style="width:25%" class="w3-bar-item w3-button">Check Analysis</a>
-    <a href="home.html#pricing" style="width:25%" class="w3-bar-item w3-button w3-hover-black">Sign Up / Login</a>
-  </div>
-</div>
+
 
 <!-- About / Jane And John -->
 <div class="w3-container w3-padding-64 w3-white w3-grayscale-min" id="us">
@@ -59,37 +112,27 @@ p {line-height: 2}
 
     <p class="w3-center" id="results"><i>Compute your forecast first to load calculations <br> (Refresh the page after every forecast)</i>
     </p><br>
-    <p class="w3-center"><a href="#wedding" class="w3-button w3-black w3-round w3-padding-large w3-large">More Details</a></p>
+    <p class="w3-center"><a onclick="location.reload();" class="w3-button w3-black w3-round w3-padding-large w3-large">New Forecast</a></p>
   </div>
 </div>
 
-<!-- Background photo -->
-<div class="w3-display-container  bgimg2">
-  <div class="w3-display-middle w3-text-white w3-center">
-    <h2 class="w3-xxlarge">ADA1 Features:</h2>
-    <p>Loss: 1.9837e-04 / Average Error: 0.0089</p>
-    <p>Trend Calculations</p>
-    <p>Buy and Sell Signals</p>
-    <p>Forecast Chart</p>
-    <p>Share Revenue</p>
-  </div>
-</div>
+
 
 <!-- Wedding information -->
 <div class="w3-container w3-padding-64 w3-white w3-grayscale-min w3-center" id="analysis">
   <div class="w3-content">
-    <h1 class="w3-text-grey"><b>IN DEPTH ANALYSIS</b></h1>
-    <h2>Differentiation</h2>
+    <h1 id="analysis-title" class="w3-text-grey"><b>IN DEPTH ANALYSIS</b></h1>
+    <h2 id="diff-title">Differentiation</h2>
     <canvas id="diffChart" width="200" height="100"></canvas>
     <div class="w3-row">
       <div class="w3-half">
-        <h3>From</h3>
+        <h3 id="from-title">From</h3>
         <div id="dfromzz">
         </div>
 
       </div>
       <div class="w3-half">
-        <h3>to</h3>
+        <h3 id="to-title">to</h3>
         <div id="dto">
 
         </div>
@@ -99,14 +142,6 @@ p {line-height: 2}
 </div>
 
 
-<!-- RSVP section -->
-<div class="w3-container w3-padding-64 w3-pale-green w3-center w3-wide" id="rsvp">
-  <h1>POTENT HUH?</h1>
-  <p class="w3-large">This is just a DEMO, if you want more, you can request a subscription to the entire ADA1 Terminal.</p>
-  <p class="w3-xlarge">
-    <button onClick="location.href='home.html#pricing'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">Request Access</button>
-  </p>
-</div>
 
 <!-- Login modal -->
 <div id="id01" class="w3-modal">
@@ -131,9 +166,22 @@ p {line-height: 2}
   </div>
 </div>
 
+<!-- Background photo -->
+<div class="w3-display-container  bgimg2">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h2 id="summary-title" class="w3-xlarge">ADA1 Summary:</h2>
+    <p id="summary-subtitle">Loss: 1.9837e-04 / Average Error: 0.0089</p>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://ada-ai-forecast-sys.herokuapp.com/" title="ADAcore API Link" target="_blank" class="w3-hover-text-green">ADAcore v1.2b API</a></p>
+  <p id="prisma-mark-footer">We do not store your cookies or any kind of your information. By clicking compute you accept that.</p>
+  <p id="powered-title">Powered by <a id="ada-api-link" href="https://ada-ai-forecast-sys.herokuapp.com/" title="ADAcore API Link" target="_blank" class="w3-hover-text-green">ADAcore v1.2b API</a></p>
+  <p id="contact-mail">Contact and Inquiries to: contact@prismasys.site</p>
+    <p id="contact-mail">Check out <a id="ada-api-link" href="https://prismasys.site/" title="ADAcore API Link" target="_blank" class="w3-hover-text-green">our page</a> for updates.</p>
+  <p id="prisma-mark-footer"><a id="ada-api-link" href="https://prismasys.site/" title="ADAcore API Link" target="_blank" class="w3-hover-text-green">Prisma Systems</a> 2021. All Rights Reserved.</p>
+
 </footer>
 
 
